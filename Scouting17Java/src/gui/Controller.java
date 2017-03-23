@@ -111,7 +111,24 @@ public class Controller {
             }
             data[11] = comments;
 
-            appendToFile(data);
+            appendToFile(data); //write out the data
+
+            //clear out the form
+            autoCheckBox;
+
+            //Spinners
+            private @FXML Spinner<Integer> autoBottomFuelSpinner;
+            private @FXML Spinner<Integer> autoTopFuelSpinner;
+            private @FXML Spinner<Integer> teleopGearsSpinner;
+            private @FXML Spinner<Integer> teleopBottomFuelSpinner;
+            private @FXML Spinner<Integer> teleopTopFuelSpinner;
+            private @FXML Spinner<Integer> ratingSpinner;
+            climbComboBox;
+            private @FXML ComboBox<String> autoGearComboBox;
+            teamNameTextField;
+            private @FXML TextField teamNumberTextField;
+            private @FXML TextField commentsTextField;
+            private @FXML Label successMessageLabel;
 
         }catch (Exception e){
             e.printStackTrace();
@@ -129,10 +146,13 @@ public class Controller {
             //write the data
             int counter = 0; //to know end of line
             for (String s : data) {
-                bw.write(s);
+                if (s == null) bw.write(" ");
+                else bw.write(s);
 
-                if (counter == 11) bw.newLine(); //next team entry
+                if (counter == 11) bw.write("\n"); //next team entry
                 else bw.write(","); //separate the entries
+
+                counter++;
             }
 
             bw.flush();
@@ -150,4 +170,3 @@ public class Controller {
 
 } // end class
 
-}
