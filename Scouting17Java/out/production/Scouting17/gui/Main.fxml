@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="606.0" prefWidth="943.0" stylesheets="@../graphics/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <VBox prefHeight="577.0" prefWidth="169.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField promptText="Team Name">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
+            <TextField promptText="Team Number">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <TextField prefHeight="186.0" prefWidth="169.0" promptText="Comments">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Button mnemonicParsing="false" text="WRITE" textFill="RED">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Auto">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="103.0" layoutY="-36.0" prefHeight="200.0" prefWidth="200.0" />
+                        <ImageView fitHeight="541.0" fitWidth="664.0" layoutX="129.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../graphics/field.png" />
+                           </image>
+                        </ImageView>
+                        <CheckBox layoutX="129.0" layoutY="64.0" mnemonicParsing="false" text="Has Auto?" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="129.0" layoutY="95.0" mnemonicParsing="false" text="Gear Auto?" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </CheckBox>
+                        <Pane layoutX="375.0" layoutY="449.0" prefHeight="81.0" prefWidth="153.0" styleClass="counter">
+                           <children>
+                              <Label layoutX="55.0" layoutY="4.0" text="Bottom Fuel">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="14.0" layoutY="24.0" mnemonicParsing="false" prefHeight="4.0" prefWidth="0.0" styleClass="increment" text="   " />
+                              <Button layoutX="14.0" layoutY="49.0" mnemonicParsing="false" prefHeight="4.0" prefWidth="0.0" styleClass="decrement" text="   " />
+                              <Label layoutX="98.0" layoutY="39.0" text="0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+
+                            <Spinner fx:id="spinner" BorderPane.alignment="CENTER" >
+                                <valueFactory>
+                                    <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="10"/>
+                                </valueFactory>
+                            </Spinner>
+
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Teleop">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="200.0" prefHeight="545.0" prefWidth="574.0">
+                           <children>
+                              <ImageView fitHeight="541.0" fitWidth="664.0" layoutX="-71.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../graphics/field.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
