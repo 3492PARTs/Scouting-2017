@@ -53,7 +53,7 @@ public class Controller {
     //Text Field
     private @FXML TextField teamNameTextField;
     private @FXML TextField teamNumberTextField;
-    private @FXML TextField commentsTextField;
+    private @FXML TextArea commentsTextArea;
 
     //Text Label
     private @FXML Label successMessageLabel;
@@ -74,6 +74,8 @@ public class Controller {
 
         //Set success label
         successMessageLabel.setText("RUNNING");
+
+        commentsTextArea.setWrapText(true);
     }
 
     public void writeTeamData(){
@@ -93,7 +95,7 @@ public class Controller {
             data[4] = autoBottomFuelSpinner.getValue().toString();
             data[5] = autoTopFuelSpinner.getValue().toString();
 
-            //teleop
+            //tele op
             data[6] = teleopGearsSpinner.getValue().toString();
             data[7] = teleopBottomFuelSpinner.getValue().toString();
             data[8] = teleopTopFuelSpinner.getValue().toString();
@@ -103,7 +105,7 @@ public class Controller {
 
             //remove comma ',' and new lines '/n' from comments
             String comments = "";
-            char[] chars = commentsTextField.getText().toCharArray();
+            char[] chars = commentsTextArea.getText().toCharArray();
             for (int i = 0; i < chars.length; i++) {
                 if (chars[i] == ',') comments += '.'; //commas become periods
                 else if (chars[i] == '\n') comments += ' '; //new lines become spaces
@@ -114,21 +116,21 @@ public class Controller {
             appendToFile(data); //write out the data
 
             //clear out the form
-            autoCheckBox;
+            autoCheckBox.setSelected(false);
+            autoBottomFuelSpinner.getValueFactory().setValue(0);
+            autoTopFuelSpinner.getValueFactory().setValue(0);
+            teleopGearsSpinner.getValueFactory().setValue(0);
+            teleopBottomFuelSpinner.getValueFactory().setValue(0);
+            teleopTopFuelSpinner.getValueFactory().setValue(0);
+            ratingSpinner.getValueFactory().setValue(0);
+            climbComboBox.valueProperty().setValue(null);
+            autoGearComboBox.valueProperty().setValue(null);
+            teamNameTextField.clear();
+            teamNumberTextField.clear();
+            commentsTextArea.clear();
 
-            //Spinners
-            private @FXML Spinner<Integer> autoBottomFuelSpinner;
-            private @FXML Spinner<Integer> autoTopFuelSpinner;
-            private @FXML Spinner<Integer> teleopGearsSpinner;
-            private @FXML Spinner<Integer> teleopBottomFuelSpinner;
-            private @FXML Spinner<Integer> teleopTopFuelSpinner;
-            private @FXML Spinner<Integer> ratingSpinner;
-            climbComboBox;
-            private @FXML ComboBox<String> autoGearComboBox;
-            teamNameTextField;
-            private @FXML TextField teamNumberTextField;
-            private @FXML TextField commentsTextField;
-            private @FXML Label successMessageLabel;
+
+            successMessageLabel.setText("Successfully Wrote Field Data");
 
         }catch (Exception e){
             e.printStackTrace();

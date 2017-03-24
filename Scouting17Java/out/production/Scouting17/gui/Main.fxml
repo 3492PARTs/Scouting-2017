@@ -11,6 +11,7 @@
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -54,11 +55,11 @@
                   <Font size="16.0" />
                </font>
             </TextField>
-            <TextField fx:id="commentsTextField" prefHeight="186.0" prefWidth="169.0" promptText="Comments">
+            <TextArea fx:id="commentsTextArea" prefHeight="200.0" prefWidth="200.0" promptText="Comments">
                <font>
                   <Font size="16.0" />
                </font>
-            </TextField>
+            </TextArea>
             <Label text="Rating" />
             <Spinner fx:id="ratingSpinner" nodeOrientation="RIGHT_TO_LEFT" />
             <Button mnemonicParsing="false" onAction="#writeTeamData" text="WRITE" textFill="RED">
@@ -84,7 +85,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Pane layoutX="103.0" layoutY="-36.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Pane layoutX="103.0" layoutY="21.0" prefHeight="143.0" prefWidth="200.0" />
                         <ImageView fitHeight="541.0" fitWidth="664.0" layoutX="129.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../graphics/field.png" />
@@ -148,6 +149,28 @@
                   </AnchorPane>
             </content>
           </Tab>
+            <Tab text="Pit">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Can it pick up gears?">
+                           <font>
+                              <Font size="16.0" />
+                           </font></CheckBox>
+                        <CheckBox layoutX="14.0" layoutY="45.0" mnemonicParsing="false" text="Does it have an auto?">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox layoutX="14.0" layoutY="76.0" mnemonicParsing="false" text="Can it fuel?">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </CheckBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </center>
