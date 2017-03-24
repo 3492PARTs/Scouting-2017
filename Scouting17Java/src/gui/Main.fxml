@@ -70,7 +70,7 @@
                   <Insets top="40.0" />
                </VBox.margin>
             </Button>
-            <Label fx:id="successMessageLabel" text="Running" textFill="RED">
+            <Label fx:id="successMessageLabel" prefHeight="132.0" prefWidth="169.0" text="Running" textFill="RED">
                <font>
                   <Font size="20.0" />
                </font>
@@ -79,7 +79,7 @@
       </VBox>
    </left>
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane fx:id="scoutingTabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
           <Tab text="Auto">
             <content>
@@ -153,50 +153,50 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <CheckBox layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Can it pick up gears?">
+                        <CheckBox fx:id="pitGearCheckBox" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Can it pick up gears?">
                            <font>
                               <Font size="16.0" />
                            </font></CheckBox>
-                        <CheckBox layoutX="14.0" layoutY="45.0" mnemonicParsing="false" text="Does it have an auto?">
+                        <CheckBox fx:id="pitAutoCheckbox" layoutX="14.0" layoutY="45.0" mnemonicParsing="false" text="Does it have an auto?">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox layoutX="14.0" layoutY="76.0" mnemonicParsing="false" text="Can it fuel?">
+                        <CheckBox fx:id="pitFuelCheckbox" layoutX="14.0" layoutY="76.0" mnemonicParsing="false" text="Can it fuel?">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </CheckBox>
-                        <Spinner layoutX="256.0" layoutY="74.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="83.0" />
+                        <Spinner fx:id="pitFuelPerSecSpinner" layoutX="256.0" layoutY="74.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="83.0" />
                         <Label layoutX="256.0" layoutY="57.0" text="Fuel per second">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="14.0" layoutY="121.0" prefHeight="32.0" prefWidth="222.0" promptText="What kind of drivetrain?">
+                        <TextField fx:id="driveTrainTextField" layoutX="14.0" layoutY="121.0" prefHeight="32.0" prefWidth="222.0" promptText="What kind of drivetrain?">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </TextField>
-                        <Spinner layoutX="256.0" layoutY="124.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="83.0" />
+                        <Spinner fx:id="pitWheelsSpinner" layoutX="256.0" layoutY="124.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="83.0" />
                         <Label layoutX="256.0" layoutY="107.0" text="How many wheels?">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <Spinner layoutX="425.0" layoutY="124.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="83.0" />
+                        <Spinner fx:id="pitCimsSpinner" layoutX="425.0" layoutY="124.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="83.0" />
                         <Label layoutX="425.0" layoutY="107.0" text="How many CIMS?">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <ComboBox layoutX="420.0" layoutY="74.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="189.0" promptText="Top or Bottom Goal" />
-                        <TextArea layoutX="17.0" layoutY="172.0" prefHeight="200.0" prefWidth="220.0" promptText="What does your robot do during a match?">
+                        <ComboBox fx:id="pitGoalComboBox" layoutX="420.0" layoutY="74.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="189.0" promptText="Top or Bottom Goal" />
+                        <TextArea fx:id="pitRobotDoTextArea" layoutX="17.0" layoutY="172.0" prefHeight="200.0" prefWidth="220.0" promptText="What does your robot do during a match?">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </TextArea>
-                        <TextArea layoutX="256.0" layoutY="172.0" prefHeight="200.0" prefWidth="220.0" promptText="What is your strategy?">
+                        <TextArea fx:id="pitStrategyTextArea" layoutX="256.0" layoutY="172.0" prefHeight="200.0" prefWidth="220.0" promptText="What is your strategy?">
                            <font>
                               <Font size="16.0" />
                            </font>
