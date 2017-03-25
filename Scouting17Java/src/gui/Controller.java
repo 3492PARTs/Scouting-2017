@@ -1,5 +1,7 @@
 package gui;
 
+import gui.windows.About;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -260,6 +262,22 @@ public class Controller {
             else comments += chars[i]; //all is good
         }
         return comments;
+    }
+
+    //Shows about info screen from help menu
+    public void about(){
+        About about = new About("About", "P.A.R.T.s 2017 Scouting", "1.0",
+                "This is a simple program for scouting FIRST robotics teams\n" +
+                        " on the field and in the pits.\n" +
+                        "\n" +
+                        "Depending on the tab chosen is which results that will be\n" +
+                        " written to a file in a CSV format.",
+                "Brandon Duke", "https://github.com/3492PARTs/Scouting-2017");
+        about.display();
+    }
+
+    public void close(){
+        Platform.exit();
     }
 
 }
