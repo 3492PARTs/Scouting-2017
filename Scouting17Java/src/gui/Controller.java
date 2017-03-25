@@ -84,6 +84,10 @@ public class Controller {
     //Text Label
     private @FXML Label successMessageLabel;
 
+    /**
+     * Start the JavaFX Application.
+     * Set all of the value factories for the spinners and options for the combo boxes
+     */
     public void initialize(){
 
         //Set Value Factories to their spinners
@@ -110,6 +114,11 @@ public class Controller {
         pitStrategyTextArea.setWrapText(true);
     }
 
+    /**
+     * Depending which tab is chosen Field (auto and teleop) or pit
+     * Write the data for that tab
+     * Otherwise let the user know an error occurred
+     */
     public void writeTeamData(){
         try {
             if (scoutingTabPane.getSelectionModel().getSelectedIndex() == 2) appendToFile(pitData(), 1); //pit tab selected
@@ -120,6 +129,11 @@ public class Controller {
         }
     }
 
+    /**
+     * Open or create the desierd file and write its results
+     * @param data A string array of results, field or pit, to be written to file
+     * @param file 0 is field data file, 1 is pit data file
+     */
     private void appendToFile (String[] data, int file) {
 
         BufferedWriter bw = null;
@@ -157,12 +171,17 @@ public class Controller {
 
     }
 
+    /**
+     * For FIELD data
+     * Gathers all of the data from the fields in the program and put them into a string array
+     * @return Returns the string array of data to be written to file
+     */
     private String[] fieldData(){
         String[] data = new String[12];//array to hold all of the data
 
         //add the data to the array
-        data[0] = teamNameTextField.getText();
-        data[1] = teamNumberTextField.getText();
+        data[0] = teamNumberTextField.getText();
+        data[1] = teamNameTextField.getText();
 
         //auto
         if (autoCheckBox.isSelected()) data[2] = "Has Auto";
@@ -201,12 +220,17 @@ public class Controller {
         return data;
     }
 
+    /**
+     * For PIT data
+     * Gathers all of the data from the fields in the program and put them into a string array
+     * @return Returns the string array of data to be written to file
+     */
     private String[] pitData(){
         String[] data = new String[14];//array to hold all of the data
 
         //add the data to the array
-        data[0] = teamNameTextField.getText();
-        data[1] = teamNumberTextField.getText();
+        data[0] = teamNumberTextField.getText();
+        data[1] = teamNameTextField.getText();
 
         if (pitGearCheckBox.isSelected()) data[2] = "Picks up gears";
         else data[2] = "Doesn't pick up gears";
@@ -252,6 +276,12 @@ public class Controller {
         return data;
     }
 
+    /**
+     * A simple method to remove invalid characters from a string
+     * In this case remove commas and new lines
+     * @param s the string to be fixed
+     * @return return the fixed string
+     */
     private String removeInvalidText(String s){
         //remove comma ',' and new lines '/n' from comments
         String comments = "";
@@ -264,7 +294,9 @@ public class Controller {
         return comments;
     }
 
-    //Shows about info screen from help menu
+    /**
+     * Shows about info screen from help menu
+     */
     public void about(){
         About about = new About("About", "P.A.R.T.s 2017 Scouting", "1.0",
                 "This is a simple program for scouting FIRST robotics teams\n" +
@@ -276,6 +308,9 @@ public class Controller {
         about.display();
     }
 
+    /**
+     * Close the program from the file menu
+     */
     public void close(){
         Platform.exit();
     }

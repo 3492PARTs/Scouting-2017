@@ -46,15 +46,15 @@
    <left>
       <VBox prefHeight="577.0" prefWidth="169.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="teamNameTextField" promptText="Team Name">
-               <font>
-                  <Font size="16.0" />
-               </font></TextField>
             <TextField fx:id="teamNumberTextField" promptText="Team Number">
                <font>
                   <Font size="16.0" />
                </font>
             </TextField>
+            <TextField fx:id="teamNameTextField" promptText="Team Name">
+               <font>
+                  <Font size="16.0" />
+               </font></TextField>
             <TextArea fx:id="commentsTextArea" prefHeight="200.0" prefWidth="200.0" promptText="Comments">
                <font>
                   <Font size="16.0" />
